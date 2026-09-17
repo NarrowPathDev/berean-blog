@@ -1,0 +1,47 @@
+{% extends "blog/base.html" %}
+{% load blog_extras %}
+
+{% block content %}
+
+<article class="article-wrapper">
+
+    <a
+        class="article-back"
+        href="{% url 'home' %}"
+    >
+        ← Back to Articles
+    </a>
+
+    <header>
+
+        <p class="article-date">
+            {{ post.published_at|date:"F j, Y" }}
+        </p>
+
+        <h1 class="article-title">
+            {{ post.title }}
+        </h1>
+
+        <p class="article-excerpt">
+            {{ post.excerpt }}
+        </p>
+
+        {% if post.featured_image %}
+
+            <img
+                src="{{ post.featured_image.url }}"
+                alt="{{ post.title }}"
+                class="article-featured-image"
+            >
+
+        {% endif %}
+
+    </header>
+
+    <div class="article-content">
+        {{ post.content|markdownify }}
+    </div>
+
+</article>
+
+{% endblock %}

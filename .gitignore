@@ -1,0 +1,26 @@
+# Virtual environment
+.venv/
+
+# Secrets
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Django local database
+db.sqlite3
+
+# User uploads
+media/
+
+# Collected static files
+staticfiles/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log

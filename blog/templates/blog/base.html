@@ -1,0 +1,147 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>{{ meta_title }}</title>
+
+    <meta
+        name="description"
+        content="{{ meta_description }}"
+    >
+
+    <link
+        rel="canonical"
+        href="{{ canonical_url }}"
+    >
+
+    <meta
+        property="og:site_name"
+        content="The Berean Scale"
+    >
+
+    <meta
+        property="og:title"
+        content="{{ meta_title }}"
+    >
+
+    <meta
+        property="og:description"
+        content="{{ meta_description }}"
+    >
+
+    <meta
+        property="og:type"
+        content="{{ meta_type }}"
+    >
+
+    <meta
+        property="og:url"
+        content="{{ canonical_url }}"
+    >
+
+    {% if social_image_url %}
+
+        <meta
+            property="og:image"
+            content="{{ social_image_url }}"
+        >
+
+        <meta
+            property="og:image:alt"
+            content="{{ post.title }}"
+        >
+
+    {% endif %}
+
+    <meta
+        name="twitter:card"
+        content="summary_large_image"
+    >
+
+    <meta
+        name="twitter:title"
+        content="{{ meta_title }}"
+    >
+
+    <meta
+        name="twitter:description"
+        content="{{ meta_description }}"
+    >
+
+    {% if social_image_url %}
+
+        <meta
+            name="twitter:image"
+            content="{{ social_image_url }}"
+        >
+
+    {% endif %}
+
+    <link
+        rel="stylesheet"
+        href="{% static 'blog/style.css' %}"
+    >
+
+</head>
+
+<body>
+
+    <header class="site-header">
+
+        <div class="container header-inner">
+
+            <a
+                href="{% url 'home' %}"
+                class="site-logo"
+            >
+                The Berean Scale
+            </a>
+
+            <nav class="site-nav">
+
+                <a href="{% url 'home' %}">
+                    Articles
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+    <main>
+
+        {% block content %}
+        {% endblock %}
+
+    </main>
+
+    <footer class="site-footer">
+
+        <div class="container">
+
+            <p>
+                Test everything. Hold fast to what is good.
+            </p>
+
+            <p class="footer-small">
+                The Berean Scale
+            </p>
+
+        </div>
+
+    </footer>
+
+</body>
+
+</html>
