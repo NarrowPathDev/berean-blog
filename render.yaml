@@ -3,6 +3,7 @@ services:
     name: berean-blog
     runtime: python
     plan: free
+    region: virginia
     branch: main
     autoDeploy: true
 
@@ -25,10 +26,10 @@ services:
           name: berean-db
           property: connectionString
 
-
 databases:
   - name: berean-db
     databaseName: berean_blog
     user: berean_blog
     plan: free
+    region: virginia
     ipAllowList: []
